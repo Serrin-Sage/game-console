@@ -1,0 +1,25 @@
+.game-boy-frame {
+    position: relative;
+    background-color: rgb(172, 172, 172);
+    height: 550px;
+    width: 360px;
+    border-radius: 20px 20px 80px 10px;
+    box-shadow: 20px 20px 0 0 black;
+
+    .top-frame {
+        position: relative;
+        height: 30px;
+        border-bottom: solid 2px black;
+        z-index: 2;
+    }
+    .game-boy-shadow {
+        position: absolute;
+        background-color: rgb(153, 153, 153);
+        height: 540px;
+        width: 350px;
+        border-radius: 10px 7px 80px 0;
+        bottom: 0;
+        right: 0.5px;
+        z-index: 1;
+    }
+}

@@ -1,6 +1,6 @@
 const Screen = () => {
   return (
-    <div>
+    <div className="scree-display">
         
     </div>
   )

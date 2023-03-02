@@ -1,5 +1,8 @@
 .game-boy-frame {
     position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: rgb(172, 172, 172);
     height: 550px;
     width: 360px;
@@ -8,8 +11,19 @@
 
     .top-frame {
         position: relative;
-        height: 30px;
+        height: 20px;
+        width: 360px;
         border-bottom: solid 2px black;
+        z-index: 2;
+    }
+
+    .scree-display {
+        margin-top: 1rem;
+        position: relative;
+        height: 200px;
+        width: 300px;
+        border: solid 2px black;
+        border-radius: 20px 20px 80px 10px;
         z-index: 2;
     }
     .game-boy-shadow {

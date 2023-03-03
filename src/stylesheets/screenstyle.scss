@@ -1,0 +1,61 @@
+.screen-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
+    position: relative;
+    height: 230px;
+    width: 84%;
+    background: rgb(207, 207, 207);
+    border: solid 4px black;
+    border-radius: 20px 20px 80px 10px;
+    z-index: 3;
+
+    .screen-header {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-evenly;
+        border: solid 2px red;
+        width: 90%;
+        height: 10%;
+        margin-top: 0.5rem;
+        z-index: 4;
+
+        .screen-header-lines {
+            display: flex;
+            div {
+                width: 10px;
+                height: 10px;
+                background-color: red;
+            }
+        }
+
+        .screen-header-title {
+            font-size: 10px;
+        }
+    }
+
+    .screen-content {
+        display: flex;
+        position: relative;
+        align-items: center;
+        justify-content: space-evenly;
+        border: solid 2px red;
+        width: 90%;
+        height: 60%;
+        margin-top: 0.5rem;
+        z-index: 4;
+    }
+    .screen-shadow {
+        margin-top: 1rem;
+        position: absolute;
+        height: 98.8%;
+        width: 98.8%;
+        background: rgb(117, 117, 117);
+        border-radius: 14px 11px 76px 3px;
+        bottom: 0;
+        right: 0;
+        z-index: 3;
+    }
+}

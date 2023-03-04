@@ -1,4 +1,4 @@
-const Screen = () => {
+const Screen = ({ powerOn }) => {
   return (
     <div className="screen-container">
         <div className="screen-header">
@@ -15,10 +15,13 @@ const Screen = () => {
           </div>
         </div>
         <div className="screen-content">
-          <div className="power-icon">
+          <div className="power-container">
+            <div className={powerOn ? "power-on" : "power-off"}>
 
+            </div>
+            <span>BATTERY</span>
           </div>
-          <div className="screen-display">
+          <div className={powerOn ? "screen-display-on" : "screen-display-off"}>
 
           </div>
         </div>

@@ -1,0 +1,60 @@
+.controls-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 45%;
+    width: 84%;
+    z-index: 4;
+
+    .d-pad-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border: solid 2px #fff;
+        border-radius: 50%;
+        width: 100px;
+        .left-right {
+            border-radius: 5px;
+            border-bottom: solid 4px grey;
+            background: rgb(0, 0, 0);
+            height: 100px;
+            position: relative;
+            width: 25px;
+            z-index: 4;
+        }
+        .up-down {
+            border-radius: 5px;
+            border-bottom: solid 4px grey;
+            background: rgb(0, 0, 0);
+            content: "";
+            height: 25px;
+            left: 0px;
+            position: absolute;
+            top: 37px;
+            width: 100px;
+        }
+    }
+
+    .button-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        border: solid 2px #fff;
+        border-radius: 20px;
+        transform: rotate(-20deg);
+        .button {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: #8b0d5b;
+            border-bottom: solid 4px #6b0243;
+            margin: 10px;
+        }
+        .button::before {
+            border-bottom: solid 2px black;
+            content: "";
+        }
+    }
+}

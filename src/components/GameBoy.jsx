@@ -1,5 +1,7 @@
-import Screen from './Screen.jsx'
 import { useState } from 'react'
+
+import Screen from './Screen.jsx'
+import Controls from './Controls.jsx'
 
 const GameBoy = () => {
 
@@ -29,7 +31,8 @@ const GameBoy = () => {
 
             </div>
           </div>
-          <Screen />
+          <Screen powerOn={powerOn}/>
+          <Controls />
           <div className="top-shadow">
 
           </div>

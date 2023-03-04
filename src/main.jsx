@@ -5,6 +5,7 @@ import './index.css'
 import './stylesheets/App.css'
 import './stylesheets/gameboystyle.scss'
 import './stylesheets/screenstyle.scss'
+import './stylesheets/controlstyle.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>

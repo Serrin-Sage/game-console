@@ -37,34 +37,49 @@
     }
 
     .button-container {
+        display: flex;
+        flex-direction: column;
         .button-content{
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
-            border: solid 2px #fff;
+            // border: solid 2px #ff0000;
+            box-shadow: inset 0 0 4px rgb(0, 0, 0);
             border-radius: 35px;
-            transform: rotate(-20deg);
+            transform: rotate(-24deg);
         }
         .button {
             width: 40px;
             height: 40px;
             border-radius: 50%;
             background-color: #8b0d5b;
-            border-bottom: solid 4px #6b0243;
-            margin: 10px;
+            border: solid 3.5px black;
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.301),
+                        inset 0 2px 3px #ffffff;
+            margin: 8px;
+            cursor: pointer;
         }
-        .button::before {
-            border-bottom: solid 2px black;
-            content: "";
+        .button:active {
+            background: radial-gradient(#8b0d5b 60%, black);
+            box-shadow: none;
+        }
+        .active-button {
+            background-color: red;
         }
 
         .button-text {
             display: flex;
             align-items: center;
             justify-content: space-evenly;
-            position: absolute;
-            transform: rotate(-20deg); 
+            position: relative;
+            transform: rotate(-24deg) translateX(19px); 
+            div {
+                font-family: frame-font;
+                font-size: 20px;
+                color: #2a5691;
+                width: 60px;
+            }
         }
     }
 }

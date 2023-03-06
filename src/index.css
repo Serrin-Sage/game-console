@@ -67,3 +67,12 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: display-font;
+  src: url("./Early GameBoy.ttf")
+}
+@font-face {
+  font-family: frame-font;
+  src: url("./AUDIOWIDE-REGULAR.ttf")
+}

@@ -6,7 +6,7 @@ import Controls from './Controls.jsx'
 const GameBoy = () => {
 
   const [powerOn, setPowerOn] = useState(false)
-
+  
   return (
     <div className="game-boy">
         <div className={powerOn ? 'on-switch' : 'off-switch'} onClick={() => setPowerOn((current) => !current)}>

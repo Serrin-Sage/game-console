@@ -11,19 +11,19 @@ const Controls = () => {
       </div>
       <div className="button-container">
         <div className="button-content">
-          <div className="button">
+          <div className="button" id="button-1">
         
           </div>
-          <div className="button">
+          <div className="button" id="button-2">
 
           </div>
         </div>
         <div className="button-text">
           <div>
-            A
+            B
           </div>
           <div>
-            B
+            A
           </div>
         </div>
       </div>

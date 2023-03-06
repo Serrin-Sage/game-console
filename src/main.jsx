@@ -8,7 +8,7 @@ import './stylesheets/screenstyle.scss'
 import './stylesheets/controlstyle.scss'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  
+    <App />,
+  
 )

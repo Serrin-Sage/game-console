@@ -1,38 +1,50 @@
 .controls-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    transform: translateY(70px);
     height: 45%;
     width: 84%;
     z-index: 4;
 
     .d-pad-container {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         position: relative;
-        border: solid 2px #fff;
-        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: fit-content;
         width: 100px;
-        .left-right {
-            border-radius: 5px;
-            border-bottom: solid 4px grey;
-            background: rgb(0, 0, 0);
-            height: 100px;
-            position: relative;
-            width: 25px;
-            z-index: 4;
+        filter: drop-shadow(7px 5px 5px #777);
+        border: solid 2px red;
+        .center {
+            width: 35px;
+            height: 35px;
+            background-color: black;
         }
-        .up-down {
-            border-radius: 5px;
-            border-bottom: solid 4px grey;
-            background: rgb(0, 0, 0);
-            content: "";
-            height: 25px;
-            left: 0px;
+        .up-btn {
+            width: 35px;
+            height: 35px;
+            background-color: black; 
+        }
+        .down-btn {
+            width: 35px;
+            height: 35px;
+            background-color: black; 
+        }
+        .right-btn {
             position: absolute;
-            top: 37px;
-            width: 100px;
+            top: 30%;
+            right: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 0, 0); 
+        }
+        .left-btn {
+            position: absolute;
+            top: 30%;
+            left: -25px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(255, 0, 0);
         }
     }
 
@@ -65,7 +77,8 @@
             box-shadow: none;
         }
         .active-button {
-            background-color: red;
+            background: radial-gradient(#8b0d5b 60%, black);
+            box-shadow: none;
         }
 
         .button-text {

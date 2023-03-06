@@ -2,11 +2,20 @@ const Controls = () => {
   return (
     <div className="controls-container">
       <div className="d-pad-container">
-        <div className="left-right">
-
+        <div className="up-btn" id="up">
+          <div>W</div>
         </div>
-        <div className="up-down">
-
+        <div className="center">
+          <div className="center-circle"></div>
+        </div>
+        <div className="down-btn" id="down">
+          <div>S</div>
+        </div>
+        <div className="right-btn" id="right">
+          <div></div>
+        </div>
+        <div className="left-btn" id="left">
+          <div></div>
         </div>
       </div>
       <div className="button-container">
@@ -20,10 +29,10 @@ const Controls = () => {
         </div>
         <div className="button-text">
           <div>
-            B
+            J
           </div>
           <div>
-            A
+            K
           </div>
         </div>
       </div>

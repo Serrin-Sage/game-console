@@ -1,4 +1,6 @@
 const Screen = ({ powerOn }) => {
+
+  
   return (
     <div className="screen-container">
         <div className="screen-header">

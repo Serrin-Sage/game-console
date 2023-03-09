@@ -123,3 +123,26 @@
         z-index: 3;
     }
 }
+
+.main-title {
+    font-family: display-font;
+    animation: fadein ease 2s;
+    animation-fill-mode: forwards;
+    color: #306230;
+}
+
+@keyframes fadein {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+
+    20% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 100%;
+        transform: translateY(70px);
+    }
+}

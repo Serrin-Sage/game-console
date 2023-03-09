@@ -1,3 +1,6 @@
+import { useState, useEffect } from "react"
+import MainTitle from "./MainTitle"
+
 const Screen = ({ powerOn }) => {
 
   
@@ -24,7 +27,7 @@ const Screen = ({ powerOn }) => {
             <span>BATTERY</span>
           </div>
           <div className={powerOn ? "screen-display-on" : "screen-display-off"}>
-
+            {powerOn ? <MainTitle /> : null }
           </div>
         </div>
         <div className="screen-shadow">

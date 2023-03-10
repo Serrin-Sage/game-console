@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import UIFx from 'uifx'
 
 import Screen from './Screen.jsx'
 import Controls from './Controls.jsx'
@@ -6,7 +7,16 @@ import Controls from './Controls.jsx'
 const GameBoy = () => {
 
   const [powerOn, setPowerOn] = useState(false)
-  
+  const turnOnSound = new UIFx({asset: ""})
+
+  const handlePowerOn = () => {
+    if (powerOn === false) {
+      setPowerOn(true)
+      turnOnSound.play
+    } else {
+      setPowerOn(false)
+    }
+  }
   return (
     <div className="game-boy">
         <div className={powerOn ? 'on-switch' : 'off-switch'} onClick={() => setPowerOn((current) => !current)}>

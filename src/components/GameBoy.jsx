@@ -1,25 +1,29 @@
 import { useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { turnOn, turnOff } from '../features/powerCheck.js'
+import { deactiveTitle } from '../features/titleTransition.js'
 import UIFx from 'uifx'
 
 import Screen from './Screen.jsx'
 import Controls from './Controls.jsx'
 
 const GameBoy = () => {
-
-  const [powerOn, setPowerOn] = useState(false)
+  const powerStatus = useSelector((state) => state.power.value.status)
+  const dispatch = useDispatch()
   const turnOnSound = new UIFx({asset: ""})
 
   const handlePowerOn = () => {
-    if (powerOn === false) {
-      setPowerOn(true)
-      turnOnSound.play
+    if (powerStatus === false) {
+      dispatch(turnOn({status: true}))
+      // turnOnSound.play
     } else {
-      setPowerOn(false)
+      dispatch(turnOff())
+      dispatch(deactiveTitle())
     }
   }
   return (
     <div className="game-boy">
-        <div className={powerOn ? 'on-switch' : 'off-switch'} onClick={() => setPowerOn((current) => !current)}>
+        <div className={powerStatus ? 'on-switch' : 'off-switch'} onClick={() => handlePowerOn()}>
 
         </div>
         <div className="game-boy-frame">
@@ -41,7 +45,7 @@ const GameBoy = () => {
 
             </div>
           </div>
-          <Screen powerOn={powerOn}/>
+          <Screen />
           <Controls />
           <div className="top-shadow">
 

@@ -1,8 +1,13 @@
+import { useSelector, useDispatch } from "react-redux"
+import { activeTitle } from "../features/titleTransition"
+
 const MainTitle = () => {
 
+  const dispatch = useDispatch()
+
   const handleEnter = (event) => {
-    if (event.key === "Enter") {
-      console.log("EVENT LISTENER")
+    if (event.key === "j") {
+      dispatch(activeTitle({status: true}))
       window.removeEventListener("keydown", handleEnter)
     }
   }
@@ -11,7 +16,7 @@ const MainTitle = () => {
 
   return (
     <div className="main-title">
-        Hello
+        WELCOME
     </div>
   )
 }

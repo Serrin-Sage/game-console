@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export const powerSlice = createSlice({
     name: "power",
-    initialState: {value: {power: false}},
+    initialState: {value: {status: false}},
     reducers: {
         turnOn: (state, action) => {
             state.value = action.payload
         },
         turnOff: (state, action) => {
-            state.value = {value: {power: false}}
+            state.value = {status: false}
         }
     }
 })

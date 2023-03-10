@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-
+import powerSlice from './features/powerCheck'
 import App from './App'
 import './index.css'
 import './stylesheets/App.css'
@@ -11,7 +11,9 @@ import './stylesheets/screenstyle.scss'
 import './stylesheets/controlstyle.scss'
 
 const store = configureStore({
-    reducer: {}
+    reducer: {
+      power: powerSlice
+    }
 })
 
 ReactDOM.createRoot(document.getElementById('root')).render(

@@ -10,6 +10,7 @@ import './stylesheets/App.css'
 import './stylesheets/gameboystyle.scss'
 import './stylesheets/screenstyle.scss'
 import './stylesheets/controlstyle.scss'
+import './stylesheets/snakegame.scss'
 
 const store = configureStore({
     reducer: {

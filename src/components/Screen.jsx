@@ -2,6 +2,8 @@ import { useState, useEffect } from "react"
 import { useSelector } from "react-redux"
 import MainTitle from "./MainTitle"
 import MainScreen from "./MainScreen"
+import SnakeDisplay from "./SnakeDisplay"
+
 const Screen = () => {
 
   const powerStatus = useSelector((state) => state.power.value.status)
@@ -30,8 +32,10 @@ const Screen = () => {
             <span>BATTERY</span>
           </div>
           <div className={powerStatus ? "screen-display-on" : "screen-display-off"}>
-            {powerStatus && titleStatus === false ? <MainTitle /> : null }
-            {titleStatus ? <MainScreen /> : null }
+            {/* {powerStatus && titleStatus === false ? <MainTitle /> : null }
+            {titleStatus ? <MainScreen /> : null } */}
+
+            {powerStatus ? <SnakeDisplay /> : null}
           </div>
         </div>
         <div className="screen-shadow">

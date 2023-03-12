@@ -1,4 +1,5 @@
 const gameBoard = document.querySelector("#snake-game-board");
+const scoreText = document.querySelector("#score");
 const context = gameBoard.getContext("2d")
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
@@ -30,15 +31,31 @@ let snake = [
 
 
 const gameStart = () => {
-
+    running = true;
+    scoreText.textContent = score;
+    createFood();
+    drawFood();
+    nextTick();
 }
 
 const nextTick = () => {
-
+    if (running) {
+        setTimeout(() => {
+            clearBoard();
+            drawFood();
+            moveSnake();
+            drawSnake();
+            checkGameOver();
+            nextTick();
+        }, 75)
+    } else {
+        displayGameOver();
+    }
 }
 
 const clearBoard = () => {
-
+    context.fillStyle = 'rgba(255, 255, 255, 0.5)'
+    context.fillRect(0, 0, gameWidth, gameHeight)
 }
 
 const createFood = () => {
@@ -54,12 +71,24 @@ const drawFood = () => {
     context.fillStyle = foodColor;
     context.fillRect(foodX, foodY, unitSize, unitSize)
 }
-const moveSnake = () => {
 
+const moveSnake = () => {
+    const snakeHead = {x: snake[0].x + xVelocity, y: snake[0].y + yVelocity}
+    snake.unshift(snakeHead);
+    if (false) {
+
+    } else {
+        snake.pop();
+    }
 }
 
-const drawSanke = () => {
-
+const drawSnake = () => {
+    context.fillStyle = snakeColor;
+    context.strokeStyle = snakeBorder;
+    snake.forEach(snakePart => {
+        context.fillRect(snakePart.x, snakePart.y, unitSize, unitSize)
+        context.strokeRect(snakePart.x, snakePart.y, unitSize, unitSize)
+    })
 }
 
 const changeDirection = () => {
@@ -79,5 +108,3 @@ const resetGame = () => {
 }
 
 gameStart();
-createFood();
-drawFood()

@@ -3,7 +3,7 @@
 const MainScreen = () => {
   return (
     <div className="main-screen-container">
-        MAIN SCREEN
+        GAME SCREEN
     </div>
   )
 }

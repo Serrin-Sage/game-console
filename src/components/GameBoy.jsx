@@ -12,10 +12,7 @@ const GameBoy = () => {
   const dispatch = useDispatch()
   const turnOnSound = new UIFx({asset: ""})
 
-  const removeScripts = () => {
-    const script = document.getElementsByClassName("snake-script")
-    console.log(script)
-  }
+
   const handlePowerOn = () => {
     if (powerStatus === false) {
       dispatch(turnOn({status: true}))
@@ -23,8 +20,6 @@ const GameBoy = () => {
     } else {
       dispatch(turnOff())
       dispatch(deactiveTitle())
-
-      removeScripts()
     }
   }
   return (

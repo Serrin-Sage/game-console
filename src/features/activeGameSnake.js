@@ -27,8 +27,6 @@ let snake = [
     {x: 0, y: 0}
 ];
 
-// window.addEventListener("keydown", changeDirection);
-
 
 const gameStart = () => {
     running = true;
@@ -47,14 +45,14 @@ const nextTick = () => {
             drawSnake();
             checkGameOver();
             nextTick();
-        }, 75)
+        }, 120)
     } else {
         displayGameOver();
     }
 }
 
 const clearBoard = () => {
-    context.fillStyle = 'rgba(255, 255, 255, 0.5)'
+    context.fillStyle = 'rgba(139,172,15,0.8)'
     context.fillRect(0, 0, gameWidth, gameHeight)
 }
 
@@ -75,8 +73,11 @@ const drawFood = () => {
 const moveSnake = () => {
     const snakeHead = {x: snake[0].x + xVelocity, y: snake[0].y + yVelocity}
     snake.unshift(snakeHead);
-    if (false) {
-
+    //if food is eaten
+    if (snake[0].x == foodX && snake[0].y == foodY) {
+        score+=1
+        scoreText.textContent = score
+        createFood();
     } else {
         snake.pop();
     }
@@ -91,20 +92,79 @@ const drawSnake = () => {
     })
 }
 
-const changeDirection = () => {
+const changeDirection = (event) => {
+    const keyPressed = event.key
+    const LEFT = "a"
+    const RIGHT = "d"
+    const UP = "w"
+    const DOWN = "s"
 
+    const movingUp = (yVelocity == -unitSize)
+    const movingDown = (yVelocity == unitSize)
+    const movingRight = (xVelocity == unitSize)
+    const movingLeft = (xVelocity == -unitSize)
+
+    switch(true) {
+        case (keyPressed == LEFT && !movingRight):
+            xVelocity = -unitSize
+            yVelocity = 0
+            break;
+        case (keyPressed == UP && !movingDown):
+            xVelocity = 0
+            yVelocity = -unitSize
+            break;
+        case (keyPressed == RIGHT && !movingLeft):
+            xVelocity = unitSize
+            yVelocity = 0
+            break;
+        case (keyPressed == DOWN && !movingUp):
+            xVelocity = 0
+            yVelocity = unitSize
+            break
+    }
 }
 
 const checkGameOver = () => {
+    switch (true) {
+        case (snake[0].x < 0):
+            running = false
+            break;
+        case (snake[0].x >= gameWidth):
+            running = false
+            break;
+        case (snake[0].y < 0):
+            running = false
+            break;
+        case (snake[0].y >= gameHeight):
+            running = false
+            break;
+    }
 
+    for (let i = 1; i < snake.length; i++) {
+        if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) {
+            running = false
+        }
+    }
 }
 
 const displayGameOver = () => {
-
+    console.log("GAME OVER")
+    return score
 }
 
 const resetGame = () => {
-
+    score = 0
+    xVelocity = unitSize
+    yVelocity = 0
+    let snake = [
+        {x: unitSize * 4, y: 0},
+        {x: unitSize * 3, y: 0},
+        {x: unitSize * 2, y: 0},
+        {x: unitSize, y: 0},
+        {x: 0, y: 0}
+    ];
 }
 
-gameStart();
+
+window.addEventListener("keydown", changeDirection);
+gameStart()

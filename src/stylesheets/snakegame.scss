@@ -1,9 +1,18 @@
 .snake-display-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 99%;
     text-align: center;
 
     .snake-game-board {
+        margin-top: 2px;
         // border: solid 2px red;
         
+    }
+
+    #score {
+        font-family: display-font;
+        position: absolute;
     }
 }

@@ -32,8 +32,8 @@ const Screen = () => {
             <span>BATTERY</span>
           </div>
           <div className={powerStatus ? "screen-display-on" : "screen-display-off"}>
-            {/* {powerStatus && titleStatus === false ? <MainTitle /> : null }
-            {titleStatus ? <MainScreen /> : null } */}
+            {powerStatus && titleStatus === false ? <MainTitle /> : null }
+            {/* {titleStatus ? <MainScreen /> : null } */}
 
             <SnakeDisplay />
           </div>

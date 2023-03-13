@@ -4,6 +4,7 @@ const context = gameBoard.getContext("2d")
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
 
+
 const snakeColor = "#306230";
 const snakeBorder = "black";
 const foodColor = 'rgba(48, 98, 48,0.5)';
@@ -28,7 +29,8 @@ let snake = [
 ];
 
 
-const gameStart = () => {
+export const gameStart = () => {
+    console.log(gameBoard)
     running = true;
     scoreText.textContent = score;
     createFood();
@@ -167,4 +169,4 @@ const resetGame = () => {
 
 
 window.addEventListener("keydown", changeDirection);
-gameStart()
+// export default {gameStart}

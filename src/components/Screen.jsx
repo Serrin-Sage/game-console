@@ -33,9 +33,9 @@ const Screen = () => {
           </div>
           <div className={powerStatus ? "screen-display-on" : "screen-display-off"}>
             {powerStatus && titleStatus === false ? <MainTitle /> : null }
-            {/* {titleStatus ? <MainScreen /> : null } */}
+            {titleStatus ? <SnakeDisplay /> : null }
 
-            <SnakeDisplay />
+            
           </div>
         </div>
         <div className="screen-shadow">

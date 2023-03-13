@@ -11,8 +11,22 @@
         
     }
 
-    #score {
-        font-family: display-font;
+    .start-btn {
         position: absolute;
+        border-radius: 15px;
+       
+    }
+
+    .game-over {
+        position: absolute;
+    }
+    #score {
+        position: absolute;
+    }
+}
+
+@keyframes blink {
+    to {
+        opacity: 1;
     }
 }

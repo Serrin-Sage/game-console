@@ -2,20 +2,27 @@ const Controls = () => {
   return (
     <div className="controls-container">
       <div className="d-pad-container">
-        <div className="up-btn direction" id="up">
-          <div>W</div>
+        <div>
+          <div className="up-btn direction" id="up">
+            <div>W</div>
+            <div className="up-shadow"></div>
+          </div>
+          <div className="center direction">
+          </div>
+          <div className="down-btn direction" id="down">
+            <div>S</div>
+          </div>
         </div>
-        <div className="center direction">
-          <div className="center-circle"></div>
-        </div>
-        <div className="down-btn direction" id="down">
-          <div>S</div>
-        </div>
-        <div className="right-btn direction" id="right">
-          <div>D</div>
-        </div>
-        <div className="left-btn direction" id="left">
-          <div>A</div>
+        <div className="left-right-btns">
+          <div className="right-btn direction" id="right">
+            <div className="direction-btn">D</div>
+          </div>
+          <div className="center direction">
+            <div className="center-circle"></div>
+          </div>
+          <div className="left-btn direction" id="left">
+            <div className="direction-btn">A</div>
+          </div>
         </div>
       </div>
       <div className="button-container">

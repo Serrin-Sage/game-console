@@ -23,12 +23,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 35px;
-            height: 35px;
-            background-color: rgb(7, 7, 7);
+            width: 33px;
+            height: 33px;
             border: solid 2px transparent;
+            box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.301);
+            background-color: black;
         }
         .center {
+            box-shadow: none;
             .center-circle {
                 height: 20px;
                 width: 20px;
@@ -38,28 +40,48 @@
             }
         }
         .up-btn {
+            position: relative;
             cursor: pointer;
-            box-shadow: 1px 4px 8px rgba(0, 0, 0, 0.301);
             border-radius: 7px 7px 0 0;
+            
+        }
+        .up-btn-active {
+            box-shadow: none;
+            border-radius: 9px 9px 0 0;
+        }
+        .up-shadow {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            
         }
         .down-btn {
             cursor: pointer; 
             border-radius: 0 0 7px 7px;
         }
-        .right-btn {
-            cursor: pointer;
+
+        .left-right-btns {
             position: absolute;
-            border-radius: 0 7px 7px 0;
-            top: 35%;
-            right: 5px;
+            transform: rotate(90deg);
+
+            .direction-btn {
+                transform: rotate(-90deg);
+            }
         }
-        .left-btn {
-            cursor: pointer;
-            position: absolute;
-            border-radius: 7px 0 0 7px;
-            top: 35%;
-            left: 5px;
-        }
+        // .right-btn {
+        //     cursor: pointer;
+        //     position: absolute;
+        //     border-radius: 0 7px 7px 0;
+        //     top: 35%;
+        //     right: 7.5px;
+        // }
+        // .left-btn {
+        //     cursor: pointer;
+        //     position: absolute;
+        //     border-radius: 7px 0 0 7px;
+        //     top: 35%;
+        //     left: 7.5px;
+        // }
     }
 
     .button-container {

@@ -22,7 +22,7 @@ const SnakeDisplay =()=> {
 
   const gameWidth = gameBoard ? gameBoard.width : 0;
   const gameHeight = gameBoard ? gameBoard.height : 0;
-  const snakeColor = "#306230";
+  const snakeColor = "#30623";
   const snakeBorder = "black";
   const foodColor = 'rgba(48, 98, 48,0.5)';
 

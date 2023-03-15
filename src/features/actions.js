@@ -11,6 +11,18 @@ document.addEventListener('keydown', function(event) {
         upBtn = document.querySelector(".up-btn")
         upBtn.classList.add("up-btn-active")
     }
+    if (event.key === "s") {
+        upBtn = document.querySelector(".down-btn")
+        upBtn.classList.add("down-btn-active")
+    }
+    if (event.key === "d") {
+        upBtn = document.querySelector(".right-btn")
+        upBtn.classList.add("right-btn-active")
+    }
+    if (event.key === "a") {
+        upBtn = document.querySelector(".left-btn")
+        upBtn.classList.add("left-btn-active")
+    }
 })
 
 document.addEventListener('keyup', function(event) {
@@ -25,5 +37,17 @@ document.addEventListener('keyup', function(event) {
     if (event.key === "w") {
         upBtn = document.querySelector(".up-btn")
         upBtn.classList.remove("up-btn-active")
+    }
+    if (event.key === "s") {
+        upBtn = document.querySelector(".down-btn")
+        upBtn.classList.remove("down-btn-active")
+    }
+    if (event.key === "d") {
+        upBtn = document.querySelector(".right-btn")
+        upBtn.classList.remove("right-btn-active")
+    }
+    if (event.key === "a") {
+        upBtn = document.querySelector(".left-btn")
+        upBtn.classList.remove("left-btn-active")
     }
 })

@@ -42,24 +42,27 @@
         .up-btn {
             position: relative;
             cursor: pointer;
-            border-radius: 7px 7px 0 0;
-            
+            border-radius: 7px 7px 0 0;  
         }
         .up-btn-active {
             box-shadow: none;
-            border-radius: 9px 9px 0 0;
+            font-size: 15px;
+            transform: perspective(8px) rotateX(1deg);
         }
         .up-shadow {
             position: absolute;
             width: 35px;
-            height: 35px;
-            
+            height: 35px; 
         }
         .down-btn {
             cursor: pointer; 
             border-radius: 0 0 7px 7px;
         }
-
+        .down-btn-active {
+            box-shadow: none;
+            font-size: 15px;
+            transform: perspective(8px) rotateX(-1deg);
+        }
         .left-right-btns {
             position: absolute;
             transform: rotate(90deg);
@@ -67,21 +70,25 @@
             .direction-btn {
                 transform: rotate(-90deg);
             }
+            .right-btn {
+                cursor: pointer;
+                border-radius: 7px 7px 0 0;
+            }
+            .right-btn-active {
+                box-shadow: none;
+                font-size: 15px;
+                transform: perspective(8px) rotateX(1deg);
+            }
+            .left-btn {
+                cursor: pointer;
+                border-radius: 0 0 7px 7px;
+            }
+            .left-btn-active {
+                box-shadow: none;
+                font-size: 15px;
+                transform: perspective(8px) rotateX(-1deg);
+            }
         }
-        // .right-btn {
-        //     cursor: pointer;
-        //     position: absolute;
-        //     border-radius: 0 7px 7px 0;
-        //     top: 35%;
-        //     right: 7.5px;
-        // }
-        // .left-btn {
-        //     cursor: pointer;
-        //     position: absolute;
-        //     border-radius: 7px 0 0 7px;
-        //     top: 35%;
-        //     left: 7.5px;
-        // }
     }
 
     .button-container {

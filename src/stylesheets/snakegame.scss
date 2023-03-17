@@ -19,10 +19,15 @@
 
     .game-over {
         position: absolute;
+        font-size: 11px;
+        background-color: rgba(139,172,15,1);
+        z-index: 1;
+        
     }
     #score {
         position: absolute;
     }
+    
 }
 
 @keyframes blink {

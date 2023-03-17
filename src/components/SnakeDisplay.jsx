@@ -38,8 +38,6 @@ const SnakeDisplay =()=> {
   let score = 0;
 
   let snake = [
-      {x: unitSize * 4, y: 0},
-      {x: unitSize * 3, y: 0},
       {x: unitSize * 2, y: 0},
       {x: unitSize, y: 0},
       {x: 0, y: 0}
@@ -175,8 +173,6 @@ const SnakeDisplay =()=> {
         xVelocity = unitSize
         yVelocity = 0
         snake = [
-            {x: unitSize * 4, y: 0},
-            {x: unitSize * 3, y: 0},
             {x: unitSize * 2, y: 0},
             {x: unitSize, y: 0},
             {x: 0, y: 0}
@@ -185,16 +181,20 @@ const SnakeDisplay =()=> {
     }
     
     const handleGameStart = (event) => {
-      if (event.key === "j") {
+      if (gameRunning) return 
+      else {
+        if (event.key === "j") {
         setGameRunning(true)
         gameStart();
         window.addEventListener("keydown", changeDirection);
         window.removeEventListener("keydown", handleGameStart)
-      }
+            }
+        }
     }
     
     const handleGameReset = (event) => {
       if (event.key === "k") {
+        setGameEnd(false)
         resetGame()
         window.removeEventListener("keydown", handleGameReset)
       }
@@ -205,7 +205,11 @@ const SnakeDisplay =()=> {
   return (
     <div className="snake-display-container" id="snake-display-container" >
         {gameRunning ? null : <div className="start-btn">READY?</div>}
-        {/* {gameEnd ? <div className="game-over">GAME OVER</div> : null }  */}
+        {gameEnd ? <div className="game-over">
+                    <h3>GAME OVER</h3>
+                    <br/>
+                    press J to retry
+                   </div> : null } 
         <canvas className="snake-game-board" id="snake-game-board" width="175" height="175"></canvas>
         <span id="score"></span>  
     </div>

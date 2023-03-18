@@ -12,6 +12,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --game-boy-color: rgb(207, 207, 207);
+  --top-shadow: rgb(175, 175, 175);
+  --bottom-shadow: rgb(104, 104, 104);
 }
 
 a {

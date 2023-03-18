@@ -23,6 +23,7 @@ document.addEventListener('keydown', function(event) {
         upBtn = document.querySelector(".left-btn")
         upBtn.classList.add("left-btn-active")
     }
+    
 })
 
 document.addEventListener('keyup', function(event) {

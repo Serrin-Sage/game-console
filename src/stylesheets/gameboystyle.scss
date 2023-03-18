@@ -31,7 +31,7 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: rgb(207, 207, 207);
+    background-color: var(--game-boy-color);
     height: 570px;
     width: 350px;
     border-radius: 20px 20px 80px 20px;
@@ -85,7 +85,7 @@
 
     .top-shadow {
         position: absolute;
-        background-color: rgb(175, 175, 175);
+        background-color: var(--top-shadow);
         height: 98.2%;
         width: 97.1%;
         border-radius: 20px 0 80px 0;
@@ -95,7 +95,7 @@
     }
     .bottom-shadow {
         position: absolute;
-        background-color: rgb(104, 104, 104);
+        background-color: var(--bottom-shadow);
         height: 99%;
         width: 98.48%;
         border-radius: 22px 7px 76px 8px;
@@ -104,3 +104,66 @@
         z-index: 1;
     }
 }
+
+.color-picker-container {
+    margin: 2rem;
+    .visually-hidden {
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+    }
+    
+    .color-picker > fieldset {
+        border: 0;
+        display: flex;
+        gap: 2rem;
+        width: fit-content;
+        background: #d6c8a1;
+        padding: 1rem 3rem;
+        margin-inline: auto;
+        border-radius: 1rem;
+    }
+    
+    .color-picker input[type="radio"] {
+        appearance: none;
+        width: 1.5rem;
+        height: 1.5rem;
+        outline: 3px solid var(--radio-color, currentColor);
+        outline-offset: 3px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+      
+      .color-picker input[type="radio"]:checked {
+        background-color: var(--radio-color);
+      }
+      
+      .color-picker input[type="radio"]#light {
+        --radio-color: gray;
+      }
+
+      .color-picker input[type="radio"]#red {
+        --radio-color: red;
+      }
+
+      .color-picker input[type="radio"]#blue {
+        --radio-color: blue;
+      }
+}
+
+:root:has(#red:checked) {
+    --game-boy-color: rgb(255, 0, 0);
+    --top-shadow: rgb(192, 12, 12);
+    --bottom-shadow: rgb(100, 5, 5);
+}
+:root:has(#blue:checked) {
+    --game-boy-color: blue;
+    --top-shadow: rgb(0, 0, 175);
+    --bottom-shadow: rgb(0, 0, 92);
+}
+
+

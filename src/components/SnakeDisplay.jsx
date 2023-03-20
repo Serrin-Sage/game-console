@@ -208,7 +208,7 @@ const SnakeDisplay =()=> {
         {gameEnd ? <div className="game-over">
                     <h3>GAME OVER</h3>
                     <br/>
-                    press J to retry
+                    press K to retry
                    </div> : null } 
         <canvas className="snake-game-board" id="snake-game-board" width="175" height="175"></canvas>
         <span id="score"></span>  

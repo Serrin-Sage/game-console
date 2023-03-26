@@ -22,6 +22,13 @@ const GameBoy = () => {
       dispatch(deactiveTitle())
     }
   }
+
+  document.addEventListener('keydown', function(event) {
+    if (event.key === "q") {
+      handlePowerOn()
+    }
+  })
+  
   return (
     <div className="game-boy">
         <div className={powerStatus ? 'on-switch' : 'off-switch'} onClick={() => handlePowerOn()}>

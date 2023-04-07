@@ -128,11 +128,11 @@
             align-items: center;
             justify-content: space-evenly;
             position: relative;
-            transform: rotate(-24deg) translateX(19px); 
+            transform: rotate(-24deg) translateX(17px); 
             div {
                 font-family: frame-font;
                 font-size: 20px;
-                color: #2a5691;
+                color: var(--game-boy-text);
                 width: 60px;
             }
         }

@@ -16,6 +16,7 @@
   --game-boy-color: rgb(207, 207, 207);
   --top-shadow: rgb(175, 175, 175);
   --bottom-shadow: rgb(104, 104, 104);
+  --game-boy-text: #2a5691;
 }
 
 a {

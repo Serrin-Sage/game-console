@@ -5,15 +5,15 @@ const ColorPicker = () => {
             <fieldset>
                 <legend className="visually-hidden">Pick a color scheme</legend>
                 <label for="light" className="visually-hidden">Light</label>
-                <input type="radio" name="theme" id="light" checked></input>
+                <input type="radio" name="theme" id="light" ></input>
 
                 <legend className="visually-hidden">Pick a color scheme</legend>
                 <label for="light" className="visually-hidden">Red</label>
-                <input type="radio" name="theme" id="red" checked></input>
+                <input type="radio" name="theme" id="red" ></input>
 
                 <legend className="visually-hidden">Pick a color scheme</legend>
                 <label for="light" className="visually-hidden">Blue</label>
-                <input type="radio" name="theme" id="blue" checked></input>
+                <input type="radio" name="theme" id="blue" ></input>
             </fieldset>
         </form>
     </div>

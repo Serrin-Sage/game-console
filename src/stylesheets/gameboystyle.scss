@@ -168,8 +168,10 @@
 }
 
 .legend-container {
-
     margin: 1rem;
+    min-width: 200px;
     margin-left: 2rem;
+    border: solid 2px black;
+    font-family: display-font;
 }
 

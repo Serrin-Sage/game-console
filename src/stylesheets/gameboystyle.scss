@@ -171,7 +171,11 @@
     margin: 1rem;
     min-width: 200px;
     margin-left: 2rem;
-    border: solid 2px black;
+    // border: solid 2px black;
     font-family: display-font;
+
+    h2 {
+        text-decoration: underline;
+    }
 }
 

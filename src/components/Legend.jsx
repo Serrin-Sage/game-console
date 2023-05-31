@@ -1,7 +1,7 @@
 const Legend = () => {
   return (
     <div className="legend-container">
-        <h2>Keyboard Controls</h2> <br/>
+        <h2>Keyboard Controls</h2>
         Q = On / Off <br/>
         W = Up <br/>
         A = Left <br/>

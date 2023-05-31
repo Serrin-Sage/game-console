@@ -171,11 +171,14 @@
     margin: 1rem;
     min-width: 200px;
     margin-left: 2rem;
-    // border: solid 2px black;
+    transform: translateY(90px);
     font-family: display-font;
+    font-size: 18px;
+    color: black;
 
     h2 {
         text-decoration: underline;
+        margin: 0;
     }
 }
 

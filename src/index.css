@@ -75,9 +75,9 @@ button:focus-visible {
 
 @font-face {
   font-family: display-font;
-  src: url("./Early GameBoy.ttf")
+  src: url("/EarlyGameBoy.ttf")
 }
 @font-face {
   font-family: frame-font;
-  src: url("./AUDIOWIDE-REGULAR.ttf")
+  src: url("/AUDIOWIDEREGULAR.ttf")
 }

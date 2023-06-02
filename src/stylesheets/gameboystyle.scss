@@ -167,18 +167,24 @@
     --game-boy-text: #fff;
 }
 
-.legend-container {
-    margin: 1rem;
-    min-width: 200px;
-    margin-left: 2rem;
-    transform: translateY(90px);
-    font-family: display-font;
-    font-size: 18px;
-    color: black;
 
-    h2 {
-        text-decoration: underline;
-        margin: 0;
+.side-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .legend-container {
+        margin: 1rem;
+        min-width: 200px;
+        margin-left: 2rem;
+        // transform: translateY(90px);
+        font-family: display-font;
+        font-size: 18px;
+        color: black;
+    
+        h2 {
+            text-decoration: underline;
+            margin: 0;
+        }
     }
 }
 

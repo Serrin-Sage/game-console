@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import GameBoy from './components/GameBoy'
 import ColorPicker from './components/ColorPicker';
 import Legend from './components/Legend';
+import Leaderboard from './components/Leaderboard';
 function App() {
   // useEffect(() => {
   //   const loadScript = async () => {
@@ -23,7 +24,8 @@ function App() {
         <GameBoy />
         <ColorPicker />
       </div>
-      <div>
+      <div className='side-content'>
+        <Leaderboard />
         <Legend />
       </div>
     </div>

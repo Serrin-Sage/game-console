@@ -188,3 +188,9 @@
     }
 }
 
+.game-over-modal::backdrop {
+    background: rgba(0, 0, 0, 0.37);
+}
+.game-over-modal {
+    font-family: display-font;
+}

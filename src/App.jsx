@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react'
+import { useSelector } from 'react-redux';
 import GameBoy from './components/GameBoy'
 import ColorPicker from './components/ColorPicker';
 import Legend from './components/Legend';
 import Leaderboard from './components/Leaderboard';
+import GameOver from './components/GameOver';
 function App() {
   // useEffect(() => {
   //   const loadScript = async () => {
@@ -16,8 +18,16 @@ function App() {
   //   }
   //   loadScript()
   // },[])
-
   
+  const getModal = () => {
+    const modal = document.querySelector('.game-over-modal')
+    return modal
+  }
+  const gameOver = useSelector((state) => state.gameStatus.value.status)
+  if (gameOver === true) {
+    // modal.showModal()
+    getModal().showModal()
+  }
   return (
     <div className="App">
       <div>
@@ -25,9 +35,12 @@ function App() {
         <ColorPicker />
       </div>
       <div className='side-content'>
-        <Leaderboard />
+        {/* <Leaderboard /> */}
         <Legend />
       </div>
+      <dialog className='game-over-modal'>
+        <GameOver />
+      </dialog>
     </div>
   )
 }

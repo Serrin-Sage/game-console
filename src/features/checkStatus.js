@@ -4,8 +4,8 @@ export const statusSlice = createSlice({
     name: "status",
     initialState: {value: {status: false}},
     reducers: {
-        gameOver: (state, action) => {
-            state.value = action.payload
+        gameOver: (state) => {
+            state.value = {status: true}
         },
         gameReset: (state) => {
             state.value = {status: false}

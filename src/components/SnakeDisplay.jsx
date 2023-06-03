@@ -1,9 +1,10 @@
 import { useState, useEffect, useRef } from "react"
-import { useSelector } from "react-redux";
-// import { gameStart } from "../features/activeGameSnake";
+import { useSelector, useDispatch } from "react-redux";
+import { gameOver, gameReset } from "../features/checkStatus";
 
 const SnakeDisplay =()=> {
   const powerStatus = useSelector((state) => state.power.value.status)
+  const dispatch = useDispatch()
   const [gameRunning, setGameRunning] = useState(false)
   const [gameEnd, setGameEnd] = useState(false)
   const [gameBoard, setGameBoard] = useState(null)
@@ -164,6 +165,7 @@ const SnakeDisplay =()=> {
     
     const displayGameOver = () => {
         setGameEnd(true)
+        dispatch(gameOver())
         window.addEventListener("keydown", handleGameReset)
     }
     
@@ -178,6 +180,7 @@ const SnakeDisplay =()=> {
             {x: 0, y: 0}
         ];
         gameStart();
+        dispatch(gameReset())
     }
     
     const handleGameStart = (event) => {

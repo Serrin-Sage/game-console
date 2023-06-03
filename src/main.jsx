@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import powerSlice from './features/powerCheck'
 import titleSlice from './features/titleTransition'
 import statusSlice from './features/checkStatus'
+import scoreSlice from './features/scoreTracker'
 import App from './App'
 import './index.css'
 import './stylesheets/App.css'
@@ -18,6 +19,7 @@ const store = configureStore({
       power: powerSlice,
       title: titleSlice,
       gameStatus: statusSlice,
+      scoreTracker: scoreSlice,
     }
 })
 

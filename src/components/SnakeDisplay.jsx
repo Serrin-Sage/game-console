@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { gameOver, gameReset } from "../features/checkStatus";
+import { updateScore, resetScore } from "../features/scoreTracker";
 
 const SnakeDisplay =()=> {
   const powerStatus = useSelector((state) => state.power.value.status)
@@ -10,6 +11,11 @@ const SnakeDisplay =()=> {
   const [gameBoard, setGameBoard] = useState(null)
   const [scoreText, setScoreText] = useState(null)
   const [context, setContext] = useState(null)
+
+  const getModal = () => {
+    const modal = document.querySelector('.game-over-modal')
+    return modal
+  }
 
   useEffect(() => {
     const gameBoard = document.querySelector("#snake-game-board");
@@ -50,6 +56,7 @@ const SnakeDisplay =()=> {
     createFood();
     drawFood();
     nextTick();
+    dispatch(gameReset())
   }
   
   const nextTick = () => {
@@ -161,16 +168,18 @@ const SnakeDisplay =()=> {
                 running = false
             }
         }
+        
     }
     
     const displayGameOver = () => {
         setGameEnd(true)
         dispatch(gameOver())
+        dispatch(updateScore({score: score}))
         window.addEventListener("keydown", handleGameReset)
     }
     
     const resetGame = () => {
-        console.log("RESET GAME")
+        // console.log("RESET GAME")
         score = 0
         xVelocity = unitSize
         yVelocity = 0
@@ -180,7 +189,7 @@ const SnakeDisplay =()=> {
             {x: 0, y: 0}
         ];
         gameStart();
-        dispatch(gameReset())
+        
     }
     
     const handleGameStart = (event) => {
@@ -198,6 +207,7 @@ const SnakeDisplay =()=> {
     const handleGameReset = (event) => {
       if (event.key === "k") {
         setGameEnd(false)
+        getModal().close()
         resetGame()
         window.removeEventListener("keydown", handleGameReset)
       }

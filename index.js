@@ -2,7 +2,7 @@ import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
 
-import Routes from "./routes/route.js"
+import Routes from "./server/routes/route.js"
 const app = express()
 const PORT = 5000
 

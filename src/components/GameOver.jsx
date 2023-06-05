@@ -8,26 +8,26 @@ const GameOver = () => {
     return modal
   }
 
-  const submitScore = async (e) => {
-    e.preventDefault()
-    let req = await fetch("https://serrin-sage.github.io/snake_game_data/leaderboard.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify ({
-        name: e.target.name.value,
-        score: scoreTotal
-      }),
-      mode: 'cors'
-    })
-    let res = await req.json()
-    if (req.ok) {
-      console.log("SUCCESS")
-    } else {
-      console.log(res.error)
-    }
-  }
+  // const submitScore = async (e) => {
+  //   e.preventDefault()
+  //   let req = await fetch("https://serrin-sage.github.io/snake_game_data/leaderboard.json", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json"
+  //     },
+  //     body: JSON.stringify ({
+  //       name: e.target.name.value,
+  //       score: scoreTotal
+  //     }),
+  //     mode: 'cors'
+  //   })
+  //   let res = await req.json()
+  //   if (req.ok) {
+  //     console.log("SUCCESS")
+  //   } else {
+  //     console.log(res.error)
+  //   }
+  // }
   return (
     <div className="game-over-container">
       <div className="game-over-text">
@@ -44,7 +44,7 @@ const GameOver = () => {
       </div>
         {/* <h1>Game Over<span className="hidden-button">!</span></h1> */}
         <h3>Total Score: {scoreTotal}</h3>
-        <form onSubmit={submitScore}>
+        <form>
           <div className="score-form-container">
             Submit Score?
             <input type="text" name="name" className=""/>

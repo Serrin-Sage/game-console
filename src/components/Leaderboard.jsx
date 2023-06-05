@@ -4,16 +4,15 @@ const Leaderboard = () => {
   const [leaderboardList, setLeaderBoardList] = useState([])
 
   useEffect(() => {
-      const fetchLeaderBoard = () => {
-        fetch("http://localhost:3000/Users")
-        .then(res => res.json())
-        .then((data) => {
-            const sortedData = data.sort((a, b) => b.score - a.score)
-            setLeaderBoardList(sortedData)
-        })
-        .catch(error => {
-            console.log("Error fetching leaderboard: ", error)
-        })
+      const fetchLeaderBoard = async () => {
+        try {
+            const response = await fetch("https://serrin-sage.github.io/snake_game_data/leaderboard.json");
+            const data = await response.json();
+            const sortedData = data.Users.sort((a, b) => b.score - a.score);
+            setLeaderBoardList(sortedData);
+          } catch (error) {
+            console.log("Error fetching leaderboard: ", error);
+          }
       }
 
       fetchLeaderBoard()
@@ -26,7 +25,7 @@ const Leaderboard = () => {
         Leaderboard
         {leaderboardList.map((user) => {
             return (
-                <div>
+                <div key={user.id}>
                     {user.name}
                     {user.score}
                 </div>

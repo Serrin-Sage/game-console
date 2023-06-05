@@ -179,7 +179,6 @@ const SnakeDisplay =()=> {
     }
     
     const resetGame = () => {
-        // console.log("RESET GAME")
         score = 0
         xVelocity = unitSize
         yVelocity = 0

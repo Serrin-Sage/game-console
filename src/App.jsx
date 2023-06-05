@@ -6,18 +6,6 @@ import Legend from './components/Legend';
 import Leaderboard from './components/Leaderboard';
 import GameOver from './components/GameOver';
 function App() {
-  // useEffect(() => {
-  //   const loadScript = async () => {
-  //     const script = document.createElement('script');
-  
-  //     script.src = "src/features/actions.js";
-  //     script.async = true;
-  
-  //     document.body.appendChild(script);
-      
-  //   }
-  //   loadScript()
-  // },[])
   
   const getModal = () => {
     const modal = document.querySelector('.game-over-modal')
@@ -25,7 +13,6 @@ function App() {
   }
   const gameOver = useSelector((state) => state.gameStatus.value.status)
   if (gameOver === true) {
-    // modal.showModal()
     getModal().showModal()
   }
   return (
@@ -35,7 +22,7 @@ function App() {
         <ColorPicker />
       </div>
       <div className='side-content'>
-        {/* <Leaderboard /> */}
+        <Leaderboard />
         <Legend />
       </div>
       <dialog className='game-over-modal'>

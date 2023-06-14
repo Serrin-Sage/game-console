@@ -1,32 +1,29 @@
 import { useState } from "react"
 import { useSelector } from "react-redux"
+import axios from 'axios';
 
 const GameOver = () => {
   const scoreTotal = useSelector((state) => state.scoreTracker.value.score)
+  const [newName, setNewName] = useState("")
+  
   const getModal = () => {
     const modal = document.querySelector('.game-over-modal')
     return modal
   }
 
-  const submitScore = async (e) => {
+  const submitScore = (e) => {
     e.preventDefault()
-    let req = await fetch("https://serrin-sage.github.io/snake_game_data/leaderboard.json", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify ({
-        name: e.target.name.value,
-        score: scoreTotal
-      }),
-      mode: 'cors'
-    })
-    let res = await req.json()
-    if (req.ok) {
-      console.log("SUCCESS")
-    } else {
-      console.log(res.error)
+    let newScoreObj = {
+      name: newName,
+      score: scoreTotal.toString()
     }
+
+    console.log(newScoreObj)
+
+    axios.post("https://sheet.best/api/sheets/9c1d38f5-e31f-4d20-8a71-d5db0814efa5", newScoreObj)
+    .then (response => {
+      getModal().close()
+    })
   }
   return (
     <div className="game-over-container">
@@ -47,7 +44,7 @@ const GameOver = () => {
         <form onSubmit={submitScore}>
           <div className="score-form-container">
             Submit Score?
-            <input type="text" name="name" className=""/>
+            <input type="text" name="name" className="" onChange={(e) => setNewName(e.target.value)}/>
             <input type="submit" value="submit"/>
           </div>
         </form>

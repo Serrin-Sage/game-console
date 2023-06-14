@@ -1,21 +1,22 @@
 import { useEffect, useState } from "react"
+import Papa from "papaparse"
+
 const Leaderboard = () => {
 
   const [leaderboardList, setLeaderBoardList] = useState([])
 
   useEffect(() => {
-      const fetchLeaderBoard = async () => {
-        try {
-            const response = await fetch("https://serrin-sage.github.io/snake_game_data/leaderboard.json");
-            const data = await response.json();
-            const sortedData = data.Users.sort((a, b) => b.score - a.score);
-            setLeaderBoardList(sortedData);
-          } catch (error) {
-            console.log("Error fetching leaderboard: ", error);
-          }
-      }
+    const getLeaderboard = () => {
+      Papa.parse("https://docs.google.com/spreadsheets/d/e/2PACX-1vTomYK27rYHRe0giAFYP7C07UzhvMf0Pwu2iuVNuU6m6cmYVXQy8QnXAQ0bRDxcsr_fTIqO3pSL-yQM/pub?output=csv", {
+        download: true, 
+        header: true,
+        complete: (results) => {
+          setLeaderBoardList(results.data)
+        }
+      })
+    }
 
-      fetchLeaderBoard()
+    getLeaderboard()
   },[])
 
   
@@ -25,7 +26,7 @@ const Leaderboard = () => {
         Leaderboard
         {leaderboardList.map((user) => {
             return (
-                <div key={user.id}>
+                <div key={user.name}>
                     {user.name}
                     {user.score}
                 </div>

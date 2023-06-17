@@ -168,22 +168,72 @@
 }
 
 
-.side-content {
+.legend-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    .legend-container {
+    align-items: center;
+    font-family: display-font;
+
+    .help-button {
+        position: relative;
+        left: 2%;
+        padding-left: 15px;
+        padding-bottom: 3px;
+        width: 50px;
+        font-size: 40px;
+        background: #f88d2e;
+        border-top: 4px solid #fab697;
+        border-left: 4px solid #fab697;
+        border-right: 4px solid #965117;
+        border-bottom: 4px solid #965117;
+        outline: 4px solid black;
+        color: white;
+        text-shadow: 3px 3px black;
+        cursor: pointer;
+        .dot {
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            background: black;
+        }
+        .dot:nth-child(1) {
+            left: 0;
+            top: 0
+        }
+        .dot:nth-child(2) {
+            top: 0;
+            right: 0;
+        }
+        .dot:nth-child(3) {
+            bottom: 0;
+            left: 0;
+        }
+        .dot:nth-child(4) {
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .legend-content {
+        
         margin: 1rem;
         min-width: 200px;
         margin-left: 2rem;
-        // transform: translateY(90px);
-        font-family: display-font;
         font-size: 18px;
+        
+        // background: linear-gradient(#e4e4e46b 3%, #b8b8b879 3%);
+        border: solid 4px black;
+        border-radius: 10px;
         color: black;
-    
+        // transform: translateX(400px);
         h2 {
-            text-decoration: underline;
-            margin: 0;
+            font-size: 25px;
+            text-decoration: none;
+            margin: 5px;
+        }
+        .controls {
+            display: grid;
         }
     }
 }
@@ -226,9 +276,6 @@
             .hidden-button:active{
                 color: red;
             }
-        }
-        h1 {
-            
         }
         .score-form-container {
             display: flex;

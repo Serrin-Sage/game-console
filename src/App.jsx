@@ -17,13 +17,22 @@ function App() {
   }
   return (
     <div className="App">
+      <div className='legend-container'>
+        <div className='help-button'>
+          ?
+          <div className='dot'></div>
+          <div className='dot'></div>
+          <div className='dot'></div>
+          <div className='dot'></div>
+        </div>
+        <Legend />
+      </div>
       <div>
         <GameBoy />
         <ColorPicker />
       </div>
-      <div className='side-content'>
+      <div className='leaderboard'>
         <Leaderboard />
-        <Legend />
       </div>
       <dialog className='game-over-modal'>
         <GameOver />

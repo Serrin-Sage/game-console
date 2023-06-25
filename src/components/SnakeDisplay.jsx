@@ -7,7 +7,7 @@ const SnakeDisplay =()=> {
   const powerStatus = useSelector((state) => state.power.value.status)
   const dispatch = useDispatch()
   const [gameRunning, setGameRunning] = useState(false)
-  const [gameEnd, setGameEnd] = useState(false)
+//   const [gameEnd, setGameEnd] = useState(false)
   const [gameBoard, setGameBoard] = useState(null)
   const [scoreText, setScoreText] = useState(null)
   const [context, setContext] = useState(null)
@@ -36,6 +36,7 @@ const SnakeDisplay =()=> {
   const unitSize = 15;
 
   let running = false;
+  let gameEnd = false
   let xVelocity = unitSize;
   let yVelocity = 0;
 
@@ -69,8 +70,9 @@ const SnakeDisplay =()=> {
               checkGameOver();
               nextTick();
           }, 140)
-      } else {
-          displayGameOver();
+      } else if (gameEnd === true) {
+        
+        displayGameOver();
       }
   }
     
@@ -150,21 +152,26 @@ const SnakeDisplay =()=> {
     const checkGameOver = () => {
         switch (true) {
             case (snake[0].x < 0):
+                gameEnd = true
                 running = false
                 break;
             case (snake[0].x >= gameWidth):
+                gameEnd = true
                 running = false
                 break;
             case (snake[0].y < 0):
+                gameEnd = true
                 running = false
                 break;
             case (snake[0].y >= gameHeight):
+                gameEnd = true
                 running = false
                 break;
         }
     
         for (let i = 1; i < snake.length; i++) {
             if (snake[i].x == snake[0].x && snake[i].y == snake[0].y) {
+                gameEnd = true
                 running = false
             }
         }
@@ -172,7 +179,6 @@ const SnakeDisplay =()=> {
     }
     
     const displayGameOver = () => {
-        setGameEnd(true)
         dispatch(gameOver())
         dispatch(updateScore({score: score}))
         window.addEventListener("keydown", handleGameReset)
@@ -205,7 +211,7 @@ const SnakeDisplay =()=> {
     
     const handleGameReset = (event) => {
       if (event.key === "k") {
-        setGameEnd(false)
+        gameEnd = false
         getModal().close()
         resetGame()
         window.removeEventListener("keydown", handleGameReset)

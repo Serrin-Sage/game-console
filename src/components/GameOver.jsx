@@ -25,6 +25,11 @@ const GameOver = () => {
       getModal().close()
     })
   }
+
+  const clearInput = () => {
+    setNewName("")
+    getModal().close()
+  }
   return (
     <div className="game-over-container">
       <div className="game-over-text">
@@ -41,16 +46,17 @@ const GameOver = () => {
       </div>
         {/* <h1>Game Over<span className="hidden-button">!</span></h1> */}
         <h3>Total Score: {scoreTotal}</h3>
-        <form onSubmit={submitScore}>
+        <form autoComplete="off" onSubmit={submitScore}>
           <div className="score-form-container">
-            Submit Score?
-            <input type="text" name="name" className="" onChange={(e) => setNewName(e.target.value)}/>
-            <input type="submit" value="submit"/>
+            Submit Score? <br/>
+            Enter initials or name
+            <input type="text" name="name" className="game-over-input" value={newName} onChange={(e) => setNewName(e.target.value)}/>
+            <div>
+              <input type="submit" value="submit" className="modal-button" id="submit"/>
+              <div className="modal-button" id="exit" onClick={clearInput}>exit</div>   
+            </div>
           </div>
         </form>
-        <div>
-          <button onClick={() => getModal().close()}>exit</button>   
-        </div>
     </div>
   )
 }

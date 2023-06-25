@@ -31,7 +31,14 @@ function App() {
         <GameBoy />
         <ColorPicker />
       </div>
-      <div className='leaderboard'>
+      <div className='leaderboard-container'>
+        <div className='leaderboard-button'>
+          !
+          <div className='dot'></div>
+          <div className='dot'></div>
+          <div className='dot'></div>
+          <div className='dot'></div>
+        </div>
         <Leaderboard />
       </div>
       <dialog className='game-over-modal'>

@@ -215,6 +215,10 @@
         }
     }
 
+    .help-button:active {
+
+    }
+
     .legend-content {
         
         margin: 1rem;
@@ -235,6 +239,59 @@
         .controls {
             display: grid;
         }
+    }
+}
+
+@keyframes shake {
+    
+}
+.leaderboard-container {
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: frame-font;
+    .leaderboard-button {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        font-size: 45px;
+        background: #f88d2e;
+        border-top: 4px solid #fab697;
+        border-left: 4px solid #fab697;
+        border-right: 4px solid #965117;
+        border-bottom: 4px solid #965117;
+        outline: 4px solid black;
+        color: white;
+        text-shadow: 3px 3px black;
+        cursor: pointer;
+        .dot {
+            position: absolute;
+            height: 5px;
+            width: 5px;
+            background: black;
+        }
+        .dot:nth-child(1) {
+            left: 0;
+            top: 0
+        }
+        .dot:nth-child(2) {
+            top: 0;
+            right: 0;
+        }
+        .dot:nth-child(3) {
+            bottom: 0;
+            left: 0;
+        }
+        .dot:nth-child(4) {
+            bottom: 0;
+            right: 0;
+        }
+        
     }
 }
 
@@ -280,8 +337,25 @@
         .score-form-container {
             display: flex;
             flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            .game-over-input {
+                width: 100px;
+                margin: 10px;
+                display: inline-block;
+                margin: 1.2rem auto;
+                border: none;
+                padding: 0;
+                width: 10.5ch;
+                background: repeating-linear-gradient(90deg, dimgrey 0, dimgrey 1ch, transparent 0, transparent 1.5ch) 0 100%/ 10ch 2px no-repeat;
+                font: 1.2rem 'Ubuntu Mono', monospace;
+                letter-spacing: 0.5ch;
+            }
         }
-
+        .exit-button {
+            
+        }
     }
 }
 
